@@ -3,7 +3,6 @@
 import { useCallback, useState, useEffect } from "react";
 import "./App.css";
 import { InputBar } from "./InputBar";
-import { mockTodos } from "../../data/todos";
 import { TodoList } from "./TodoList";
 import type { Todo } from "./types";
 import {
@@ -14,7 +13,7 @@ import {
 } from "./api";
 
 function App() {
-  const [todos, setTodos] = useState<Todo[]>(mockTodos);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   const addNewTodo = useCallback(async (description: string) => {
     const newTodo = await createNewTodos(description);
